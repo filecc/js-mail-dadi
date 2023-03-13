@@ -56,13 +56,30 @@
 
         <!-- Dice GAME -->
         <section id="play" class="d-none wrapper d-flex justify-content-center align-items-center">
-            <div class="row justify-content-center w-100 gap-5">
-               <div class="col-10 text-center">
-                <h2 class="pb-3">Play</h2>
-                
+            <div class="row justify-content-center align-items-center flex-column w-100 gap-5">
+               <div class="col-10 col-md-3 text-center">
+                <h2 class="pb-3">Dice Roll</h2>
                </div>
-               <div class="col-10 text-center">
-                <a href="./index.html" class="btn btn-danger">Back Home</a>
+               <div class="col-11 col-md-7">
+                <div class="row justify-content-center text-center">
+                    <div class="col-5">
+                        <h4>PC Dice</h4>
+                        <p class="h1" id="pcDice"></p>
+                    </div>
+                    <div class="col-5">
+                        <h4>Your Dice</h4>
+                        <p class="h1" id="userDice"></p>
+                    </div>
+                </div>
+               </div>
+               <div class="col-10 col-md-3 text-center">
+                <h2 class="diceResult pb-3"></h2>
+               </div>
+               <div class="col-10 col-md-3 text-center">
+                <div class="vstack gap-2 mx-auto">
+                    <button id="playGame" class="btn btn-primary placeholder-wave">Play</button>
+                    <a href="./index.html" class="btn btn-danger">Back Home</a>
+                </div>
                </div>
             </div>
         </section>

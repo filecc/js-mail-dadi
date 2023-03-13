@@ -82,6 +82,30 @@ btnGoCheck.addEventListener('click', () => {
 
 
 /* ------------------------- DICE GAME ------------------------- */
+const pcDice = document.getElementById('pcDice');
+const userDice = document.getElementById('userDice');
+const btnPlayDice = document.getElementById('playGame');
+const diceResult = document.querySelector('.diceResult');
+
+btnPlayDice.addEventListener('click', () => {
+    diceResult.classList.remove('text-sucess');
+    diceResult.classList.remove('text-danger');
+    diceResult.classList.remove('text-warning');
+    const pcNUm = getRandomInt(6);
+    const userNum = getRandomInt(6);
+    let text;
+    let styleText = 'text-info';
+    (pcNUm === userNum)
+    ? (text = 'Nobody wins.', styleText = 'text-warning')
+    : ((pcNUm > userNum)
+    ? (text = 'Oops! You lost.', styleText = 'text-danger')
+    : (text = 'Yeah! You win.', styleText = 'text-success'));
+   
+    pcDice.innerHTML = pcNUm;
+    userDice.innerHTML = userNum;
+    diceResult.innerHTML = text;
+    diceResult.classList.add(styleText);
+});
 
 
 
@@ -105,4 +129,9 @@ function checkEmail(toCheck){
     }
     return inList;
 }
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max + 1);
+  }
+  
 
