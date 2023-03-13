@@ -47,7 +47,7 @@ btnPlay.addEventListener('click', ()=> {
 
 /* ------------------------- CHECK ------------------------- */
 const list = [
-    'robert.deniro@gmail.com',
+    'deniro@gmail.com',
     'chrisevans@icloud.com',
     'sheldoncooper@nasa.com'
 ]
@@ -66,12 +66,23 @@ input.addEventListener('input', () => {
 })
 
 btnGoCheck.addEventListener('click', () => {
-    const requested = input.value;
+    document.querySelector('.resultBox').classList.remove('d-none');
+    const requested = input.value.toLowerCase();
+    let result = 'Non &egrave; presente'
     input.value = '';
     btnGoCheck.disabled = true;
     document.querySelector('.requestedCheck').innerHTML = requested;
-
+    checkEmail(requested) && ( result = '&Egrave; presente');
+    document.querySelector('.resultCheck').innerHTML = result;
+    const resultCheck = document.querySelector('.resultCheck');
+    resultCheck.classList.remove('bg-success');
+    resultCheck.classList.remove('bg-danger');
+    checkEmail(requested) ? resultCheck.classList.toggle('bg-success') : resultCheck.classList.toggle('bg-danger')
 })
+
+
+/* ------------------------- DICE GAME ------------------------- */
+
 
 
 /* ------------------------- FUNCTIONS ------------------------- */
@@ -87,10 +98,11 @@ function checkToggle(){
     check.classList.toggle('d-none');
 }
 
-function checkEmail(){
-
+function checkEmail(toCheck){
+    let inList = false;
     for(let i=0;i<list.length;i++){
-
+        list.indexOf(toCheck)>=0 && (inList = true);
     }
+    return inList;
 }
 
