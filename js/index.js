@@ -36,11 +36,45 @@ const play = document.getElementById('play');
 btnCheck.addEventListener('click', () => {
     homepageToggle();
     checkToggle();
+});
+
+btnPlay.addEventListener('click', ()=> {
+    homepageToggle();
+    playToggle();
+});
+
+
+
+/* ------------------------- CHECK ------------------------- */
+const list = [
+    'robert.deniro@gmail.com',
+    'chrisevans@icloud.com',
+    'sheldoncooper@nasa.com'
+]
+
+const input = document.querySelector('input[name="email"]');
+const btnGoCheck = document.getElementById('check-email');
+
+
+
+input.addEventListener('input', () => {
+    if (input.value != '' && input.value.includes('@') && input.value.trim().length > 1){
+        btnGoCheck.disabled = false;
+    } else {
+        btnGoCheck.disabled = true;
+    }
+})
+
+btnGoCheck.addEventListener('click', () => {
+    const requested = input.value;
+    input.value = '';
+    btnGoCheck.disabled = true;
+    document.querySelector('.requestedCheck').innerHTML = requested;
+
 })
 
 
-
-
+/* ------------------------- FUNCTIONS ------------------------- */
 
 function homepageToggle(){
     homepage.classList.toggle('d-none');
@@ -51,5 +85,12 @@ function playToggle(){
 
 function checkToggle(){
     check.classList.toggle('d-none');
+}
+
+function checkEmail(){
+
+    for(let i=0;i<list.length;i++){
+
+    }
 }
 

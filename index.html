@@ -13,31 +13,42 @@
   <body>
     <main class="container">
         <!-- HOMEPAGE -->
-        <section id="homepage" class="wrapper d-flex justify-content-center align-items-center">
-            <div class="row justify-content-center w-100 gap-5">
-               <div class="col-10 text-center">
-                <h1 class="pb-3">Check</h1>
-                <button class="btn btn-outline-primary" id="btn-check"><i class="fa-solid fa-list-check"></i></button>
+        <section id="homepage" class="wrapper d-flex flex-column justify-content-center align-items-center gap-4">
+            <h1 class="pb-3">Welcome</h1>
+            <div class="row justify-content-center w-100 gap-3">
+               <div class="col-10 col-md-3 text-center">
+                
+                <button class="btn btn-outline-primary w-100" id="btn-check"><i class="fa-solid fa-list-check"></i> Check an e-mail</button>
                </div>
                <div class="col-10 text-center">
                 <span class="fw-bold">or</span>
                </div>
-               <div class="col-10 text-center">
-                <h2 class="h1 pb-3">Play</h2>
-                <button class="btn btn-outline-warning" id="btn-play"><i class="fa-solid fa-play"></i></button>
+               <div class="col-10 col-md-3 text-center">
+                <button class="btn btn-outline-warning w-100" id="btn-play"><i class="fa-solid fa-play"></i> Play a game</button>
                </div>
             </div>
         </section>
 
         <!-- Mail Check -->
-        <section id="check" class="d-none wrapper d-flex justify-content-center align-items-center">
-            <div class="row justify-content-center w-100 gap-5">
+        <section id="check" class="d-none wrapper d-flex  justify-content-center align-items-center">
+            <div class="row flex-column justify-content-center align-items-center w-100 gap-5">
                <div class="col-10 text-center">
-                <h2 class="pb-3">Check</h2>
-                
+                <h2 class="pb-3">Check an e-mail</h2>
+                <p class="p-0 m-0">Find out if it's in the list</p>
                </div>
                <div class="col-10 text-center">
-                <a href="./index.html" class="btn btn-danger" id="reset">Back Home</a>
+                <input class="input-group-text mx-auto" autocomplete="off" type="email" name="email" required>
+               </div>
+               <div class="col-10 col-md-3 text-center">
+                <div class="vstack gap-2 mx-auto">
+                    <button id="check-email" class="btn btn-primary" disabled>Check</button>
+                    <a href="./index.html" class="btn btn-danger">Back Home</a>
+                </div>
+               </div>
+               <div class="col-10 col-md-3 text-center">
+                <h3 class="pb-3">L'indirizzo e-mail</h3>
+                <small class="requestedCheck p-1 m-0"></small>
+                <span class="btn w-100"></span>
                </div>
             </div>
         </section>
@@ -46,7 +57,11 @@
         <section id="play" class="d-none wrapper d-flex justify-content-center align-items-center">
             <div class="row justify-content-center w-100 gap-5">
                <div class="col-10 text-center">
-                <h2 class="pb-3">Check</h2>
+                <h2 class="pb-3">Play</h2>
+                
+               </div>
+               <div class="col-10 text-center">
+                <a href="./index.html" class="btn btn-danger">Back Home</a>
                </div>
             </div>
         </section>
